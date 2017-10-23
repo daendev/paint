@@ -1,6 +1,6 @@
 # Paent - a paint program in java
 
-## Features
+## Planned features
 
  * Drawing on a canvas with a brush
  * Set brush width
