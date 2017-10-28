@@ -84,7 +84,6 @@ public class PaentWindow extends JFrame {
 		super.setLayout(new BorderLayout());
 		super.add(menuPanel, BorderLayout.NORTH);
 		super.add(board, BorderLayout.CENTER);
-		
 	}
 	
 	public static void main(String[] args){
