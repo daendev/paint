@@ -31,7 +31,7 @@ public class PaentWindow extends JFrame {
 	private JButton loadButton = new JButton("Load");
 	private JButton exportButton = new JButton("Export");
 	
-	private JTextField brushTextField = new JTextField();
+	private JTextField brushTextField = new JTextField(3);
 	private JSlider brushSlider = new JSlider(JSlider.HORIZONTAL,1,200,DEFAULT_BRUSH_SIZE);
 	
 	private ButtonGroup colorGroup = new ButtonGroup();
