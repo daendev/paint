@@ -3,11 +3,11 @@ package tools;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-public abstract class Tool {
+public abstract class DrawTool {
 
 	Graphics g;
 	
-	public Tool(Graphics g){
+	public DrawTool(Graphics g){
 		this.g = g;
 	}
 	

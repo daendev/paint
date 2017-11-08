@@ -6,17 +6,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
-
+import java.util.HashMap;
+import java.util.Map;
+import tools.*;
 import javax.swing.JPanel;
 
-import tools.Brush;
 
 public class DrawingBoard extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
 	private BufferedImage img;
-	private Brush brush;
+	private Map<String, DrawTool> tools = new HashMap<String, DrawTool>();
+	private DrawTool selectedTool;
 
 	
 	public DrawingBoard(){
@@ -24,9 +26,18 @@ public class DrawingBoard extends JPanel {
 		Graphics imageGraphics = img.getGraphics();
 		imageGraphics.setColor(Color.WHITE);
 		imageGraphics.fillRect(0, 0, img.getWidth(), img.getHeight());
-		brush = new Brush(imageGraphics);
+		
+		tools.put("brush", new Brush(imageGraphics));
+		
 		this.addMouseListener(new clickListener());
 		this.addMouseMotionListener(new motionListener());
+		
+		selectedTool = tools.get("brush");
+	}
+	
+	
+	public void selectTool(String t){
+		selectedTool = tools.get(t);
 	}
 	
 	
@@ -45,7 +56,7 @@ public class DrawingBoard extends JPanel {
 	class motionListener implements MouseMotionListener {
 
 		public void mouseDragged(MouseEvent drag) {
-			brush.performAction(drag);
+			selectedTool.performAction(drag);
 			repaint();
 		}
 
@@ -56,7 +67,7 @@ public class DrawingBoard extends JPanel {
 	class clickListener implements MouseListener {
 
 		public void mouseClicked(MouseEvent click) {
-			brush.performAction(click);
+			selectedTool.performAction(click);
 			repaint();
 		}
 

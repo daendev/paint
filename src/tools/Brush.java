@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-public class Brush extends Tool {
+public class Brush extends DrawTool {
 
 	private Color color;
 	private int size;
