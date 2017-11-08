@@ -48,7 +48,7 @@ public class PaentWindow extends JFrame {
 	public PaentWindow(){
 		super("Paent");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(650,400);
+		setSize(700,400);
 		
 		brushTextField.setText(Integer.toString(DEFAULT_BRUSH_SIZE));
 		

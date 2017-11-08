@@ -23,13 +23,15 @@ public class DrawingBoard extends JPanel {
 //	}
 	
 	public DrawingBoard(){
-		img = new BufferedImage(450, 450, BufferedImage.TYPE_INT_RGB);
+		img = new BufferedImage(700, 300, BufferedImage.TYPE_INT_RGB);
 	}
 	
 	@Override
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		Graphics imageGraphics = img.getGraphics();
+		imageGraphics.setColor(Color.WHITE);
+		imageGraphics.fillRect(0, 0, img.getWidth(), img.getHeight());
 		imageGraphics.setColor(Color.RED);
 		imageGraphics.fillRect(20, 20, 50, 100);
 		g.drawImage(img, 0, 0, null);
