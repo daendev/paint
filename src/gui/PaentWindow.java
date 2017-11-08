@@ -10,6 +10,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
@@ -83,7 +84,7 @@ public class PaentWindow extends JFrame {
 		
 		super.setLayout(new BorderLayout());
 		super.add(menuPanel, BorderLayout.NORTH);
-		super.add(board, BorderLayout.CENTER);
+		super.add(new JScrollPane(board), BorderLayout.CENTER);
 	}
 	
 	public static void main(String[] args){
