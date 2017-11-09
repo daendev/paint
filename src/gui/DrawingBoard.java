@@ -23,18 +23,27 @@ public class DrawingBoard extends JPanel {
 	
 	public DrawingBoard(){
 		img = new BufferedImage(700, 300, BufferedImage.TYPE_INT_RGB);
-		Graphics imageGraphics = img.getGraphics();
-		imageGraphics.setColor(Color.WHITE);
-		imageGraphics.fillRect(0, 0, img.getWidth(), img.getHeight());
-		
-		tools.put("brush", new Brush(imageGraphics));
+		Graphics g = img.getGraphics();
+		g.setColor(Color.WHITE);
+		g.fillRect(0, 0, img.getWidth(), img.getHeight());
 		
 		this.addMouseListener(new clickListener());
 		this.addMouseMotionListener(new motionListener());
 		
-		selectedTool = tools.get("brush");
+		initTools();
+		selectTool("Brush");
 	}
 	
+	
+	public void initTools(){
+		tools.put("Brush", new Brush(getImageGraphics()));
+		tools.put("Pencil", new Pencil(getImageGraphics()));
+	}
+	
+	
+	public String[] getToolNameArray(){
+		return tools.keySet().toArray(new String[tools.size()]);
+	}
 	
 	public void selectTool(String t){
 		selectedTool = tools.get(t);

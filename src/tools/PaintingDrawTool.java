@@ -9,8 +9,8 @@ public abstract class PaintingDrawTool extends DrawTool {
 	protected Color color;
 	protected int size;
 
-	public PaintingDrawTool(String name, Graphics g) {
-		super(name, g);
+	public PaintingDrawTool(Graphics g) {
+		super(g);
 	}
 
 	
