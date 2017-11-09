@@ -4,13 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-public class Brush extends DrawTool {
+public class Brush extends PaintingDrawTool {
 
-	private Color color;
-	private int size;
 	
 	public Brush(Graphics g) {
-		super(g);
+		super("Brush",g);
 		color = Color.BLACK;
 		size = 20;
 	}
@@ -20,21 +18,4 @@ public class Brush extends DrawTool {
 		g.setColor(color);
 		g.fillOval(e.getX()-size/2, e.getY()-size/2, size, size);
 	}
-	
-	public void setColor(Color c){
-		color = c;
-	}
-	
-	public void setSize(int s){
-		size = s;
-	}
-	
-	public Color getColor(){
-		return color;
-	}
-	
-	public int getSize(){
-		return size;
-	}
-
 }
