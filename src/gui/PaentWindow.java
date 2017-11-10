@@ -4,10 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -17,7 +21,7 @@ import javax.swing.JToggleButton;
 
 import gui.DrawingBoard;
 
-public class PaentWindow extends JFrame {
+public class PaentWindow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -42,9 +46,18 @@ public class PaentWindow extends JFrame {
 	private JToggleButton whiteButton = new JToggleButton("White");
 	private JToggleButton greenButton = new JToggleButton("Green");
 	private JToggleButton redButton = new JToggleButton("Red");
+	private static final HashMap<JToggleButton, Color> colorMap = new HashMap<JToggleButton, Color>();
 	
 	private DrawingBoard board = new DrawingBoard();
 	
+	private void initColorMap(){
+		colorMap.put(blackButton, Color.BLACK);
+		colorMap.put(blueButton, Color.BLUE);
+		colorMap.put(yellowButton, Color.YELLOW);
+		colorMap.put(whiteButton, Color.WHITE);
+		colorMap.put(greenButton, Color.GREEN);
+		colorMap.put(redButton, Color.RED);
+	}
 	
 	public PaentWindow(){
 		super("Paent");
@@ -63,17 +76,27 @@ public class PaentWindow extends JFrame {
 		saveLoadExportPanel.add(saveButton);
 		saveLoadExportPanel.add(loadButton);
 		saveLoadExportPanel.add(exportButton);
+		saveButton.addActionListener(this);
+		loadButton.addActionListener(this);
+		exportButton.addActionListener(this);
 		
 		brushPanel.add(brushSlider);
 		brushPanel.add(brushTextField);
 		brushPanel.setBorder(BorderFactory.createTitledBorder("Brush"));
 				
+		initColorMap();
 		colorPanel.add(blackButton);
 		colorPanel.add(blueButton);
 		colorPanel.add(yellowButton);
 		colorPanel.add(whiteButton);
 		colorPanel.add(greenButton);
 		colorPanel.add(redButton);
+		blackButton.addActionListener(this);
+		blueButton.addActionListener(this);
+		yellowButton.addActionListener(this);
+		whiteButton.addActionListener(this);
+		greenButton.addActionListener(this);
+		redButton.addActionListener(this);
 		colorPanel.setBorder(BorderFactory.createTitledBorder("Color"));
 		
 		menuPanel.add(brushPanel);
@@ -91,5 +114,40 @@ public class PaentWindow extends JFrame {
 		PaentWindow p = new PaentWindow();
 		p.setVisible(true);
 	}
+
+	public void actionPerformed(ActionEvent e) {
+		JComponent src = (JComponent) e.getSource();
+		if(src == saveButton) saveButtonPressed();
+		else if(src == loadButton) loadButtonPressed();
+		else if(src == exportButton) exportButtonPressed();
+		else {
+			for(JToggleButton b : colorMap.keySet()){
+				if(src == b){
+					colorSelection();
+					break;
+				}
+			}
+		}
+	}
 	
+	private void saveButtonPressed(){
+		
+	}
+	
+	private void loadButtonPressed(){
+		
+	}
+
+	private void exportButtonPressed(){
+		
+	}
+
+	public void colorSelection(){
+		for(JToggleButton b : colorMap.keySet()){
+			if(b.isSelected()){
+				board.getSelectedTool().setColor(colorMap.get(b));
+				break;
+			}
+		}
+	}
 }
