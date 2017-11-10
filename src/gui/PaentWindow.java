@@ -7,11 +7,11 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
-
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -27,18 +27,23 @@ public class PaentWindow extends JFrame implements ActionListener {
 	
 	private static final int DEFAULT_BRUSH_SIZE = 20;
 
+	// Panels
 	private JPanel menuPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-	private JPanel brushPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+	private JPanel toolPanel = new JPanel(new FlowLayout());
 	private JPanel saveLoadExportPanel = new JPanel(new GridLayout(3,1,5,5));
 	private JPanel colorPanel = new JPanel(new GridLayout(2,3,5,5));
 	
+	// Buttons
 	private JButton saveButton = new JButton("Save");
 	private JButton loadButton = new JButton("Load");
 	private JButton exportButton = new JButton("Export");
 	
-	private JTextField brushTextField = new JTextField(3);
-	private JSlider brushSlider = new JSlider(JSlider.HORIZONTAL,1,200,DEFAULT_BRUSH_SIZE);
+	// Textfield, slider, combobox
+	private JTextField sizeTextField = new JTextField(3);
+	private JSlider sizeSlider = new JSlider(JSlider.HORIZONTAL,1,200,DEFAULT_BRUSH_SIZE);
+	private JComboBox<String> toolList;
 	
+	// Color buttons
 	private ButtonGroup colorGroup = new ButtonGroup();
 	private JToggleButton blackButton = new JToggleButton("Black", true);
 	private JToggleButton blueButton = new JToggleButton("Blue");
@@ -62,9 +67,9 @@ public class PaentWindow extends JFrame implements ActionListener {
 	public PaentWindow(){
 		super("Paent");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(700,400);
+		setSize(750,400);
 		
-		brushTextField.setText(Integer.toString(DEFAULT_BRUSH_SIZE));
+		sizeTextField.setText(Integer.toString(DEFAULT_BRUSH_SIZE));
 		
 		colorGroup.add(blackButton);
 		colorGroup.add(blueButton);
@@ -79,12 +84,16 @@ public class PaentWindow extends JFrame implements ActionListener {
 		saveButton.addActionListener(this);
 		loadButton.addActionListener(this);
 		exportButton.addActionListener(this);
-		
-		brushPanel.add(brushSlider);
-		brushPanel.add(brushTextField);
-		brushPanel.setBorder(BorderFactory.createTitledBorder("Brush"));
 				
 		initColorMap();
+
+		toolPanel.setBorder(BorderFactory.createTitledBorder("Size"));
+		toolList = new JComboBox<String>(board.getToolNameArray());
+		toolPanel.add(toolList);
+		toolPanel.add(sizeSlider);
+		toolPanel.add(sizeTextField);
+		
+
 		colorPanel.add(blackButton);
 		colorPanel.add(blueButton);
 		colorPanel.add(yellowButton);
@@ -99,7 +108,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 		redButton.addActionListener(this);
 		colorPanel.setBorder(BorderFactory.createTitledBorder("Color"));
 		
-		menuPanel.add(brushPanel);
+		menuPanel.add(toolPanel);
 		menuPanel.add(colorPanel);
 		menuPanel.add(saveLoadExportPanel);
 		

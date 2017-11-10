@@ -6,37 +6,60 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
+import tools.*;
 
 import javax.swing.JPanel;
+
 
 public class DrawingBoard extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-//	private int brushSize = 20;
-//	private Color brushColor = Color.BLACK;
 	private BufferedImage img;
-	
-//	public void setBrushSize(int x){
-//		brushSize = x;
-//	}
-//	
-//	public void setBrushColor(Color c){
-//		brushColor = c;
-//	}
+	private Map<String, DrawTool> tools = new HashMap<String, DrawTool>();
+	private DrawTool selectedTool;
+
 	
 	public DrawingBoard(){
 		img = new BufferedImage(700, 300, BufferedImage.TYPE_INT_RGB);
-		Graphics imageGraphics = img.getGraphics();
-		imageGraphics.setColor(Color.WHITE);
-		imageGraphics.fillRect(0, 0, img.getWidth(), img.getHeight());
+		Graphics g = img.getGraphics();
+		g.setColor(Color.WHITE);
+		g.fillRect(0, 0, img.getWidth(), img.getHeight());
+		
 		this.addMouseListener(new clickListener());
 		this.addMouseMotionListener(new motionListener());
+		
+		initTools();
+		selectTool("Brush");
 	}
+	
+	
+	public void initTools(){
+		tools.put("Brush", new Brush(getImageGraphics()));
+		tools.put("Pencil", new Pencil(getImageGraphics()));
+	}
+	
+	
+	public String[] getToolNameArray(){
+		return tools.keySet().toArray(new String[tools.size()]);
+	}
+	
+	public void selectTool(String t){
+		selectedTool = tools.get(t);
+	}
+	
+	
+	public PaintingDrawTool getSelectedTool(){
+		return (PaintingDrawTool) selectedTool;
+	}
+	
 	
 	public Graphics getImageGraphics(){
 		return img.getGraphics();
 	}
+	
 	
 	@Override
 	public void paintComponent(Graphics g){
@@ -44,24 +67,22 @@ public class DrawingBoard extends JPanel {
 		g.drawImage(img, 0, 0, null);
 	}
 	
+	
 	class motionListener implements MouseMotionListener {
 
 		public void mouseDragged(MouseEvent drag) {
-			Graphics g = getImageGraphics();
-			g.setColor(Color.BLUE);
-			g.fillOval(drag.getX()-10, drag.getY()-10, 20, 20);
+			selectedTool.performAction(drag);
 			repaint();
 		}
 
 		public void mouseMoved(MouseEvent move) {}
 	}
 	
+	
 	class clickListener implements MouseListener {
 
 		public void mouseClicked(MouseEvent click) {
-			Graphics g = getImageGraphics();
-			g.setColor(Color.BLUE);
-			g.fillOval(click.getX()-10, click.getY()-10, 20, 20);
+			selectedTool.performAction(click);
 			repaint();
 		}
 
