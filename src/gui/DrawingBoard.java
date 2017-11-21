@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -65,6 +66,11 @@ public class DrawingBoard extends JPanel {
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		g.drawImage(img, 0, 0, null);
+	}
+	
+	@Override
+	public Dimension getPreferredSize(){
+		return new Dimension(img.getWidth(), img.getHeight());
 	}
 	
 	
