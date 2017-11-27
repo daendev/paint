@@ -15,7 +15,7 @@ public class Pencil extends PaintingDrawTool {
 	@Override
 	public void performAction(MouseEvent e) {
 		g.setColor(color);
-		g.fillRect(e.getX()-size/2, e.getY()-size/2, e.getX()+size, e.getY()+size);
+		g.fillRect(e.getX()-size/2, e.getY()-size/2, size, size);
 	}
 
 }

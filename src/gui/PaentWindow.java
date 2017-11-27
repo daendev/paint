@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.EventObject;
 import java.util.HashMap;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -18,15 +19,17 @@ import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
-
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import gui.DrawingBoard;
 
-public class PaentWindow extends JFrame implements ActionListener {
+public class PaentWindow extends JFrame implements ActionListener, ChangeListener, DocumentListener {
 
 	private static final long serialVersionUID = 1L;
 	
 	private static final int DEFAULT_BRUSH_SIZE = 20;
-
 	// Panels
 	private JPanel menuPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	private JPanel toolPanel = new JPanel(new FlowLayout());
@@ -84,6 +87,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 		saveButton.addActionListener(this);
 		loadButton.addActionListener(this);
 		exportButton.addActionListener(this);
+		
 				
 		initColorMap();
 
@@ -92,6 +96,9 @@ public class PaentWindow extends JFrame implements ActionListener {
 		toolPanel.add(toolList);
 		toolPanel.add(sizeSlider);
 		toolPanel.add(sizeTextField);
+		toolList.addActionListener(this);
+		sizeTextField.getDocument().addDocumentListener(this);
+		sizeSlider.addChangeListener(this);
 		
 
 		colorPanel.add(blackButton);
@@ -124,11 +131,13 @@ public class PaentWindow extends JFrame implements ActionListener {
 		p.setVisible(true);
 	}
 
+	
 	public void actionPerformed(ActionEvent e) {
 		JComponent src = (JComponent) e.getSource();
 		if(src == saveButton) saveButtonPressed();
 		else if(src == loadButton) loadButtonPressed();
 		else if(src == exportButton) exportButtonPressed();
+		else if(src == toolList) toolSelected();
 		else {
 			for(JToggleButton b : colorMap.keySet()){
 				if(src == b){
@@ -137,6 +146,32 @@ public class PaentWindow extends JFrame implements ActionListener {
 				}
 			}
 		}
+	}
+	
+	
+	public void stateChanged(ChangeEvent e) {
+		JComponent src = (JComponent) e.getSource();
+		if(src == sizeSlider) slide();
+	}
+	
+	private void slide(){
+		int size = sizeSlider.getValue();
+		sizeTextField.setText(Integer.toString(size));
+		board.getSelectedTool().setSize(size);
+	}
+	
+	
+	private void sizeTextChanged(){
+		int size = Integer.parseInt(sizeTextField.getText());
+		sizeSlider.setValue(size);
+		board.getSelectedTool().setSize(size);
+	}
+	
+	
+	private void toolSelected(){
+		String selectedTool = (String) toolList.getSelectedItem();
+		board.selectTool(selectedTool);
+		board.getSelectedTool().setSize(Integer.parseInt(sizeTextField.getText()));
 	}
 	
 	private void saveButtonPressed(){
@@ -159,4 +194,19 @@ public class PaentWindow extends JFrame implements ActionListener {
 			}
 		}
 	}
+
+	public void changedUpdate(DocumentEvent e) {
+		JComponent src = (JComponent) ((EventObject) e).getSource();
+		if(src == sizeTextField) sizeTextChanged();
+	}
+
+	public void insertUpdate(DocumentEvent e) {
+		
+	}
+
+	public void removeUpdate(DocumentEvent e) {
+		
+	}
+
+	
 }
