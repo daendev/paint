@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.HashMap;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -141,6 +142,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 	}
 	
 	private void saveButtonPressed(){
+		File currentDirectory = new File("");
 		String path = (String) JOptionPane.showInputDialog(
 				this,
 				"Choose a path and filename:",
@@ -148,7 +150,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 				JOptionPane.PLAIN_MESSAGE,
 				null,
 				null,
-				"/home/dan/Pictures/untitled.ser");
+				currentDirectory.getAbsolutePath() + "/untitled.ser");
 		System.out.println(path);
 	}
 	
