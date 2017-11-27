@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSlider;
@@ -140,7 +141,15 @@ public class PaentWindow extends JFrame implements ActionListener {
 	}
 	
 	private void saveButtonPressed(){
-		
+		String path = (String) JOptionPane.showInputDialog(
+				this,
+				"Choose a path and filename:",
+				"Save file",
+				JOptionPane.PLAIN_MESSAGE,
+				null,
+				null,
+				"/home/dan/Pictures/untitled.ser");
+		System.out.println(path);
 	}
 	
 	private void loadButtonPressed(){
