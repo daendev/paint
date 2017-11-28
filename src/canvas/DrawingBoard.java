@@ -1,4 +1,4 @@
-package gui;
+package canvas;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -18,6 +18,9 @@ public class DrawingBoard extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
+	private static final int IMAGE_WIDTH = 700;
+	private static final int IMAGE_HEIGHT = 350;
+	
 	private BufferedImage img;
 	private Map<String, DrawTool> tools = new HashMap<String, DrawTool>();
 	private DrawTool selectedTool;
@@ -25,7 +28,7 @@ public class DrawingBoard extends JPanel {
 	
 // CONSTRUCTOR
 	public DrawingBoard(){
-		img = new BufferedImage(700, 300, BufferedImage.TYPE_INT_RGB);
+		img = new BufferedImage(IMAGE_WIDTH, IMAGE_HEIGHT, BufferedImage.TYPE_INT_RGB);
 		Graphics g = img.getGraphics();
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, img.getWidth(), img.getHeight());
@@ -76,6 +79,8 @@ public class DrawingBoard extends JPanel {
 	public void setImage(BufferedImage i){
 		img = i;
 		repaint();
+		initTools();
+		selectTool("Brush");
 	}
 	
 	

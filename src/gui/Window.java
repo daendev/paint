@@ -2,10 +2,13 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.KeyEvent;
@@ -28,13 +31,16 @@ import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import gui.DrawingBoard;
 
-public class PaentWindow extends JFrame implements ActionListener, ChangeListener, KeyListener {
+import canvas.DrawingBoard;
+
+public class Window extends JFrame implements ActionListener, ChangeListener, KeyListener {
 
 	private static final long serialVersionUID = 1L;
 	
 	private static final int DEFAULT_BRUSH_SIZE = 20;
+	private static final int SLIDER_MIN = 1;
+	private static final int SLIDER_MAX = 200;
 	// Panels
 	private JPanel menuPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	private JPanel toolPanel = new JPanel(new FlowLayout());
@@ -48,7 +54,7 @@ public class PaentWindow extends JFrame implements ActionListener, ChangeListene
 	
 	// Textfield, slider, combobox
 	private JTextField sizeTextField = new JTextField(3);
-	private JSlider sizeSlider = new JSlider(JSlider.HORIZONTAL,1,100,DEFAULT_BRUSH_SIZE);
+	private JSlider sizeSlider = new JSlider(JSlider.HORIZONTAL,SLIDER_MIN,SLIDER_MAX,DEFAULT_BRUSH_SIZE);
 	private JComboBox<String> toolList;
 	
 	// Color buttons
@@ -72,10 +78,11 @@ public class PaentWindow extends JFrame implements ActionListener, ChangeListene
 		colorMap.put(redButton, Color.RED);
 	}
 	
-	public PaentWindow(){
-		super("Paent");
+	public Window(){
+		super("Pænt");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(920,700);
+		setSize(750,500);
+		setMinimumSize(new Dimension(750,500));
 		
 		sizeTextField.setText(Integer.toString(DEFAULT_BRUSH_SIZE));
 		
@@ -98,6 +105,7 @@ public class PaentWindow extends JFrame implements ActionListener, ChangeListene
 
 		toolPanel.setBorder(BorderFactory.createTitledBorder("Size"));
 		toolList = new JComboBox<String>(board.getToolNameArray());
+		toolList.setSelectedItem("Brush");
 		toolPanel.add(toolList);
 		toolPanel.add(sizeSlider);
 		toolPanel.add(sizeTextField);
@@ -125,15 +133,26 @@ public class PaentWindow extends JFrame implements ActionListener, ChangeListene
 		menuPanel.add(saveLoadExportPanel);
 		
 		board.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		board.selectTool("Pencil");
 		
 		super.setLayout(new BorderLayout());
 		super.add(menuPanel, BorderLayout.NORTH);
 		super.add(new JScrollPane(board), BorderLayout.CENTER);
+		
+		addComponentListener(new ComponentAdapter(){
+	        public void componentResized(ComponentEvent e){
+	            Dimension d=Window.this.getSize();
+	            Dimension minD=Window.this.getMinimumSize();
+	            if(d.width<minD.width)
+	                d.width=minD.width;
+	            if(d.height<minD.height)
+	                d.height=minD.height;
+	            Window.this.setSize(d);
+	        }
+	    });
 	}
 	
 	public static void main(String[] args){
-		PaentWindow p = new PaentWindow();
+		Window p = new Window();
 		p.setVisible(true);
 	}
 
@@ -170,8 +189,8 @@ public class PaentWindow extends JFrame implements ActionListener, ChangeListene
 	private void sizeTextChanged(){
 		try {
 			int size = Integer.parseInt(sizeTextField.getText());
-			if(size<1) size=1;
-			if(size>100) size=100;
+			if(size<SLIDER_MIN) size=SLIDER_MIN;
+			if(size>SLIDER_MAX) size=SLIDER_MAX;
 			board.getSelectedTool().setSize(size);
 			sizeSlider.setValue(size);
 		} catch(NumberFormatException e){}
@@ -195,7 +214,7 @@ public class PaentWindow extends JFrame implements ActionListener, ChangeListene
 				JOptionPane.PLAIN_MESSAGE,
 				null,
 				null,
-				currentDirectory.getAbsolutePath() + "/untitled.ser");
+				currentDirectory.getAbsolutePath() + "/untitled.png");
 		if(path!=null)
 			try {
 				ImageIO.write(board.getImage(), "PNG", new File(path));
