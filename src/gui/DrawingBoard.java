@@ -75,6 +75,7 @@ public class DrawingBoard extends JPanel {
 	}
 	public void setImage(BufferedImage i){
 		img = i;
+		repaint();
 	}
 	
 	

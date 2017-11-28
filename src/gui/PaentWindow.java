@@ -7,9 +7,13 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 import java.util.HashMap;
+
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -192,11 +196,31 @@ public class PaentWindow extends JFrame implements ActionListener, ChangeListene
 				null,
 				null,
 				currentDirectory.getAbsolutePath() + "/untitled.ser");
-		System.out.println(path);
+		if(path!=null)
+			try {
+				ImageIO.write(board.getImage(), "PNG", new File(path));
+			} catch(IOException e){
+				JOptionPane.showMessageDialog(this, "Invalid path", "Saving error", JOptionPane.ERROR_MESSAGE);
+			}
 	}
 	
 	private void loadButtonPressed(){
-		
+		File currentDirectory = new File("");
+		String path = (String) JOptionPane.showInputDialog(
+				this,
+				"Open from path:",
+				"Open file",
+				JOptionPane.PLAIN_MESSAGE,
+				null,
+				null,
+				currentDirectory.getAbsolutePath());
+		if(path!=null)
+			try {
+				BufferedImage img = ImageIO.read(new File(path));
+				board.setImage(img);
+			} catch(IOException e){
+				JOptionPane.showMessageDialog(this, "Invalid path", "Opening error", JOptionPane.ERROR_MESSAGE);
+			}
 	}
 
 	private void exportButtonPressed(){
