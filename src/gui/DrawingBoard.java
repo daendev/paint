@@ -23,6 +23,7 @@ public class DrawingBoard extends JPanel {
 	private DrawTool selectedTool;
 
 	
+// CONSTRUCTOR
 	public DrawingBoard(){
 		img = new BufferedImage(700, 300, BufferedImage.TYPE_INT_RGB);
 		Graphics g = img.getGraphics();
@@ -37,43 +38,62 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
+// INIT TOOLS
 	public void initTools(){
 		tools.put("Brush", new Brush(getImageGraphics()));
 		tools.put("Pencil", new Pencil(getImageGraphics()));
 	}
 	
 	
+// GET TOOL NAMES
 	public String[] getToolNameArray(){
 		return tools.keySet().toArray(new String[tools.size()]);
 	}
 	
+	
+// SELECT TOOL	
 	public void selectTool(String t){
 		selectedTool = tools.get(t);
 	}
 	
 	
+// GET SELECTED TOOL
 	public PaintingDrawTool getSelectedTool(){
 		return (PaintingDrawTool) selectedTool;
 	}
 	
 	
+// GET GRAPHICS
 	public Graphics getImageGraphics(){
 		return img.getGraphics();
 	}
 	
 	
+// IMAGE GETTER AND SETTER
+	public BufferedImage getImage(){
+		return img;
+	}
+	public void setImage(BufferedImage i){
+		img = i;
+	}
+	
+	
+// PAINT COMPONENT
 	@Override
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		g.drawImage(img, 0, 0, null);
 	}
 	
+	
+// PREFFERRED SIZE OVERRIDE FOR SCROLLPANE
 	@Override
 	public Dimension getPreferredSize(){
 		return new Dimension(img.getWidth(), img.getHeight());
 	}
 	
 	
+// MOUSE MOTION
 	class motionListener implements MouseMotionListener {
 
 		public void mouseDragged(MouseEvent drag) {
@@ -84,7 +104,8 @@ public class DrawingBoard extends JPanel {
 		public void mouseMoved(MouseEvent move) {}
 	}
 	
-	
+
+// MOUSE CLICK
 	class clickListener implements MouseListener {
 
 		public void mouseClicked(MouseEvent click) {
