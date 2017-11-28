@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.HashMap;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -20,15 +22,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
-
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import gui.DrawingBoard;
 
-public class PaentWindow extends JFrame implements ActionListener {
+public class PaentWindow extends JFrame implements ActionListener, ChangeListener, KeyListener {
 
 	private static final long serialVersionUID = 1L;
 	
 	private static final int DEFAULT_BRUSH_SIZE = 20;
-
 	// Panels
 	private JPanel menuPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	private JPanel toolPanel = new JPanel(new FlowLayout());
@@ -42,7 +44,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 	
 	// Textfield, slider, combobox
 	private JTextField sizeTextField = new JTextField(3);
-	private JSlider sizeSlider = new JSlider(JSlider.HORIZONTAL,1,200,DEFAULT_BRUSH_SIZE);
+	private JSlider sizeSlider = new JSlider(JSlider.HORIZONTAL,1,100,DEFAULT_BRUSH_SIZE);
 	private JComboBox<String> toolList;
 	
 	// Color buttons
@@ -69,7 +71,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 	public PaentWindow(){
 		super("Paent");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(750,400);
+		setSize(920,700);
 		
 		sizeTextField.setText(Integer.toString(DEFAULT_BRUSH_SIZE));
 		
@@ -86,6 +88,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 		saveButton.addActionListener(this);
 		loadButton.addActionListener(this);
 		exportButton.addActionListener(this);
+		
 				
 		initColorMap();
 
@@ -94,6 +97,9 @@ public class PaentWindow extends JFrame implements ActionListener {
 		toolPanel.add(toolList);
 		toolPanel.add(sizeSlider);
 		toolPanel.add(sizeTextField);
+		toolList.addActionListener(this);
+		sizeTextField.addKeyListener(this);
+		sizeSlider.addChangeListener(this);
 		
 
 		colorPanel.add(blackButton);
@@ -115,6 +121,7 @@ public class PaentWindow extends JFrame implements ActionListener {
 		menuPanel.add(saveLoadExportPanel);
 		
 		board.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		board.selectTool("Pencil");
 		
 		super.setLayout(new BorderLayout());
 		super.add(menuPanel, BorderLayout.NORTH);
@@ -126,11 +133,13 @@ public class PaentWindow extends JFrame implements ActionListener {
 		p.setVisible(true);
 	}
 
+	
 	public void actionPerformed(ActionEvent e) {
 		JComponent src = (JComponent) e.getSource();
 		if(src == saveButton) saveButtonPressed();
 		else if(src == loadButton) loadButtonPressed();
 		else if(src == exportButton) exportButtonPressed();
+		else if(src == toolList) toolComboBoxChanged();
 		else {
 			for(JToggleButton b : colorMap.keySet()){
 				if(src == b){
@@ -140,6 +149,38 @@ public class PaentWindow extends JFrame implements ActionListener {
 			}
 		}
 	}
+	
+	
+	public void stateChanged(ChangeEvent e) {
+		JComponent src = (JComponent) e.getSource();
+		if(src == sizeSlider) sizeSliderChanged();
+	}
+	
+	private void sizeSliderChanged(){
+		int size = sizeSlider.getValue();
+		sizeTextField.setText(Integer.toString(size));
+		board.getSelectedTool().setSize(size);
+	}
+	
+	
+	private void sizeTextChanged(){
+		try {
+			int size = Integer.parseInt(sizeTextField.getText());
+			if(size<1) size=1;
+			if(size>100) size=100;
+			board.getSelectedTool().setSize(size);
+			sizeSlider.setValue(size);
+		} catch(NumberFormatException e){}
+	}
+	
+	
+	private void toolComboBoxChanged(){
+		String selectedTool = (String) toolList.getSelectedItem();
+		board.selectTool(selectedTool);
+		colorSelection();
+		board.getSelectedTool().setSize(sizeSlider.getValue());
+	}
+	
 	
 	private void saveButtonPressed(){
 		File currentDirectory = new File("");
@@ -170,4 +211,18 @@ public class PaentWindow extends JFrame implements ActionListener {
 			}
 		}
 	}
+
+	public void keyPressed(KeyEvent e) {
+		
+	}
+
+	public void keyReleased(KeyEvent e) {
+		JComponent source = (JComponent) e.getSource();
+		if(source == sizeTextField) sizeTextChanged();
+	}
+
+	public void keyTyped(KeyEvent e) {
+
+	}
+	
 }

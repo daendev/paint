@@ -15,7 +15,7 @@ public abstract class PaintingDrawTool extends DrawTool {
 
 	
 	public void setColor(Color c) { color = c; }	
-	public void setSize(int s) { size = s; }
+	public void setSize(int s) { size = s;}
 	public Color getColor() { return color; }
 	public int getSize() { return size;	}
 	
