@@ -47,12 +47,13 @@ public class DrawingBoard extends JPanel {
 	
 	/**
 	 * Initializes tools
+	 * Adds the BufferedImage's Graphics to the tools, so they can manipulate the image.
 	 * <p>
 	 * Add tools to the drawing board in this function.
 	 */
 	public void initTools(){
-		tools.put("Brush", new Brush(getImageGraphics()));
-		tools.put("Pencil", new Pencil(getImageGraphics()));
+		tools.put("Brush", new Brush(img.getGraphics()));
+		tools.put("Pencil", new Pencil(img.getGraphics()));
 	}
 	
 	
@@ -84,17 +85,8 @@ public class DrawingBoard extends JPanel {
 	
 	
 	/**
-	 * Get the graphics of the BufferedImage.
-	 * @return the graphics of the image
-	 */
-	public Graphics getImageGraphics(){
-		return img.getGraphics();
-	}
-	
-	
-	/**
-	 * Get the BufferedImage component of the DrawingBoard.
-	 * @return the image
+	 * Getter method for the panel's image.
+	 * @return the BufferedImage component of the DrawingBoard
 	 */
 	public BufferedImage getImage(){
 		return img;
@@ -102,10 +94,8 @@ public class DrawingBoard extends JPanel {
 	
 	
 	/**
-	 * Image setter method.
-	 * <p>
-	 * Sets the DrawingBoard's image to display.
-	 * @param i the BufferedImage we want to set
+	 * Setter method for the panel's image.
+	 * @param i the BufferedImage to be set
 	 */
 	public void setImage(BufferedImage i){
 		img = i;

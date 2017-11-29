@@ -74,6 +74,9 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+// --------------- INIT FUNCTIONS -----------------------------------------------------------------
+	
+	
 	private void initPanels(){
 		menuPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		// Tool
@@ -178,25 +181,24 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+// --------------- INIT FUNCTIONS END -------------------------------------------------------------
+	
+	
 	public static void main(String[] args){
 		Window p = new Window();
 		p.setVisible(true);
 	}
 
 	
+// --------------- LISTENER INTERFACE OVERRIDE METHODS --------------------------------------------
+	
+	
 	public void actionPerformed(ActionEvent e) {
 		JComponent src = (JComponent) e.getSource();
 		if(src == saveButton) saveButtonPressed();
 		else if(src == openButton) openButtonPressed();
 		else if(src == toolList) toolComboBoxChanged();
-		else {
-			for(JToggleButton b : colorMap.keySet()){
-				if(src == b){
-					colorSelection();
-					break;
-				}
-			}
-		}
+		else colorSelection();
 	}
 	
 	
@@ -204,6 +206,24 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 		JComponent src = (JComponent) e.getSource();
 		if(src == sizeSlider) sizeSliderChanged();
 	}
+	
+	
+	public void keyReleased(KeyEvent e) {
+		JComponent source = (JComponent) e.getSource();
+		if(source == sizeTextField) sizeTextChanged();
+	}
+	
+	
+	public void keyTyped(KeyEvent e) {}
+	
+	
+	public void keyPressed(KeyEvent e) {}
+	
+	
+// --------------- LISTENER INTERFACE OVERRIDE METHODS END ----------------------------------------
+	
+// --------------- CUSTOM ACTION PERFORM METHODS --------------------------------------------------	
+	
 	
 	private void sizeSliderChanged(){
 		int size = sizeSlider.getValue();
@@ -245,9 +265,13 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 			try {
 				ImageIO.write(board.getImage(), "PNG", new File(path));
 			} catch(IOException e){
-				JOptionPane.showMessageDialog(this, "Invalid path", "Saving error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this,
+											  "Invalid path",
+											  "Saving error",
+											  JOptionPane.ERROR_MESSAGE);
 			}
 	}
+	
 	
 	private void openButtonPressed(){
 		File currentDirectory = new File("");
@@ -264,7 +288,10 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 				BufferedImage img = ImageIO.read(new File(path));
 				board.setImage(img);
 			} catch(IOException e){
-				JOptionPane.showMessageDialog(this, "Invalid path", "Opening error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this,
+											  "Invalid path",
+											  "Opening error",
+											  JOptionPane.ERROR_MESSAGE);
 			}
 	}
 
@@ -277,18 +304,8 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 			}
 		}
 	}
+	
+// --------------- CUSTOM ACTION PERFORM METHODS END ----------------------------------------------	
 
-	public void keyPressed(KeyEvent e) {
-		
-	}
-
-	public void keyReleased(KeyEvent e) {
-		JComponent source = (JComponent) e.getSource();
-		if(source == sizeTextField) sizeTextChanged();
-	}
-
-	public void keyTyped(KeyEvent e) {
-
-	}
 	
 }
