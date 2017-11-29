@@ -34,6 +34,11 @@ import javax.swing.event.ChangeListener;
 
 import canvas.DrawingBoard;
 
+/**
+ * Main window of the application.
+ * @author Dániel Gál
+ *
+ */
 public class Window extends JFrame implements ActionListener, ChangeListener, KeyListener {
 
 	private static final long serialVersionUID = 1L;
@@ -56,7 +61,11 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	// Board
 	private DrawingBoard board;
 	
-	
+	/**
+	 * Class constructor
+	 * <p>
+	 * Creates a menu on the top of the window and a DrawingBoard in the center.
+	 */
 	public Window(){
 		super("Pænt");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -77,6 +86,11 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 // --------------- INIT FUNCTIONS -----------------------------------------------------------------
 	
 	
+	/**
+	 * Initialize JPanels
+	 * <p>
+	 * Creates basic empty panels with layouts and adds them to the menu.
+	 */
 	private void initPanels(){
 		menuPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		// Tool
@@ -92,6 +106,11 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * Initialize buttons
+	 * <p>
+	 * Creates all the buttons, places them on the panels and adds ActionListeners to all of them.
+	 */
 	private void initButtons(){
 		// SAVE
 		saveButton = new JButton("Save");
@@ -124,6 +143,12 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * Inizialize color selection data structure
+	 * <p>
+	 * Creates a HashMap with the color JToggleButtons as the keys and the Colors as the values.
+	 * Adds ActionListeners to the buttons.
+	 */
 	private void initColor(){
 		colorMap = new HashMap<JToggleButton, Color>();
 		colorMap.put(blackButton, Color.BLACK);
@@ -138,6 +163,11 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * Initialize tool selection and tool options
+	 * <p>
+	 * Creates a JComboBox with the tools, a JSlider and a JTextField for changing the tool size.
+	 */
 	private void initToolOptions(){
 		// Panel
 		toolPanel.setBorder(BorderFactory.createTitledBorder("Size"));
@@ -158,6 +188,9 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * Calls all the initXxx() functions.
+	 */
 	private void initMenu(){
 		initPanels();
 		initButtons();
@@ -166,6 +199,10 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * This method is making sure that the minimum window size constraint is working on all platforms.
+	 * (It was not working on Ubuntu with i3 window manager)
+	 */
 	private void windowResizeFix(){
 		addComponentListener(new ComponentAdapter(){
 	        public void componentResized(ComponentEvent e){
@@ -193,6 +230,12 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 // --------------- LISTENER INTERFACE OVERRIDE METHODS --------------------------------------------
 	
 	
+	/**
+	 * Override of the ActionListener's actionPerformed method.
+	 * <p>
+	 * Checks which button was pressed and calls the corresponding method.
+	 * @see ActionListener
+	 */
 	public void actionPerformed(ActionEvent e) {
 		JComponent src = (JComponent) e.getSource();
 		if(src == saveButton) saveButtonPressed();
@@ -202,21 +245,41 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * Override of the ChangeListener interface's stateChanged method.
+	 * <p>
+	 * Checks which component was changed and calls the corresponding method.
+	 * @see ChangeListener
+	 */
 	public void stateChanged(ChangeEvent e) {
 		JComponent src = (JComponent) e.getSource();
 		if(src == sizeSlider) sizeSliderChanged();
 	}
 	
 	
+	/**
+	 * Override of the KeyListener interface's keyReleased method.
+	 * <p>
+	 * Checks which component had a key pressed on it and calls the corresponding method.
+	 * @see KeyListener
+	 */
 	public void keyReleased(KeyEvent e) {
 		JComponent source = (JComponent) e.getSource();
 		if(source == sizeTextField) sizeTextChanged();
 	}
 	
 	
+	/**
+	 * Override of the KeyListener interface's keyTyped method.
+	 * Not used but has to be implemented
+	 */
 	public void keyTyped(KeyEvent e) {}
 	
 	
+	/**
+	 * Override of the KeyListener interface's keyPressed method.
+	 * Not used but has to be implemented
+	 */
 	public void keyPressed(KeyEvent e) {}
 	
 	
@@ -225,6 +288,11 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 // --------------- CUSTOM ACTION PERFORM METHODS --------------------------------------------------	
 	
 	
+	/**
+	 * The method that gets called when the JSlider changes.
+	 * <p>
+	 * Sets the size of the currently selected tool as well as the value in the JTextField.
+	 */
 	private void sizeSliderChanged(){
 		int size = sizeSlider.getValue();
 		sizeTextField.setText(Integer.toString(size));
@@ -232,6 +300,11 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * The method that gets called when the JTextField changes.
+	 * <p>
+	 * Sets the size of the currently selected tool as well as the value in the JSlider.
+	 */
 	private void sizeTextChanged(){
 		try {
 			int size = Integer.parseInt(sizeTextField.getText());
@@ -239,10 +312,20 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 			if(size>SLIDER_MAX) size=SLIDER_MAX;
 			board.getSelectedTool().setSize(size);
 			sizeSlider.setValue(size);
-		} catch(NumberFormatException e){}
+		} catch(NumberFormatException e){
+			board.getSelectedTool().setSize(DEFAULT_BRUSH_SIZE);
+			sizeSlider.setValue(DEFAULT_BRUSH_SIZE);
+		}
 	}
 	
 	
+	/**
+	 * The method that gets called when the JComboBox changes.
+	 * <p>
+	 * Selects the tool currently displayed in the JComboBox.
+	 * Calls colorSelection() so that the selected tool has the currently selected color
+	 * and sets the size to the current size values in the JTextField and the JSlider.
+	 */
 	private void toolComboBoxChanged(){
 		String selectedTool = (String) toolList.getSelectedItem();
 		board.selectTool(selectedTool);
@@ -251,6 +334,12 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * The method that gets called when the Save button is pressed.
+	 * <p>
+	 * Opens a dialog window where the user can type in a path where they want their image saved.
+	 * The BufferedImage gets written to a .PNG file.
+	 */
 	private void saveButtonPressed(){
 		File currentDirectory = new File("");
 		String path = (String) JOptionPane.showInputDialog(
@@ -273,6 +362,13 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 	
 	
+	/**
+	 * The method that gets called when the Open button is pressed.
+	 * <p>
+	 * Opens a dialog window where the user can type in a path of the image they want to open.
+	 * The .PNG image gets read into a BufferedImage object
+	 * and it is set as the DrawingBoard's BufferedImages component.
+	 */
 	private void openButtonPressed(){
 		File currentDirectory = new File("");
 		String path = (String) JOptionPane.showInputDialog(
@@ -296,6 +392,12 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	}
 
 
+	/**
+	 * Color selection method
+	 * <p>
+	 * Detects which JToggleButton is currently selected and sets the color of
+	 * the currently selected tool to that color.
+	 */
 	public void colorSelection(){
 		for(JToggleButton b : colorMap.keySet()){
 			if(b.isSelected()){

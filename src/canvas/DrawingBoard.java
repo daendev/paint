@@ -13,7 +13,11 @@ import tools.*;
 
 import javax.swing.JPanel;
 
-
+/**
+ * A JPanel that can be drawn on. Includes drawing tools.
+ * @author Dániel Gál
+ *
+ */
 public class DrawingBoard extends JPanel {
 
 	private static final long serialVersionUID = 1L;
