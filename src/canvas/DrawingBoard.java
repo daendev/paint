@@ -25,8 +25,6 @@ public class DrawingBoard extends JPanel {
 	private Map<String, DrawTool> tools = new HashMap<String, DrawTool>();
 	private DrawTool selectedTool;
 
-	
-// CONSTRUCTOR
 	/**
 	 * Class constructor
 	 * <p>
@@ -47,7 +45,6 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// INIT TOOLS
 	/**
 	 * Initializes tools
 	 * <p>
@@ -59,7 +56,6 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// GET TOOL NAMES
 	/**
 	 * Get the names of the currently used tools in an array.
 	 * @return an array of Strings with the tool names
@@ -69,7 +65,6 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// SELECT TOOL	
 	/**
 	 * Select a tool from the currently used tools.
 	 * @param t the name of the tool we want to select
@@ -79,7 +74,6 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// GET SELECTED TOOL
 	/**
 	 * Get the currently selected tool.
 	 * @return the tool that is currently selected
@@ -89,7 +83,6 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// GET GRAPHICS
 	/**
 	 * Get the graphics of the BufferedImage.
 	 * @return the graphics of the image
@@ -99,14 +92,21 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// IMAGE GETTER AND SETTER
 	/**
-	 * 
-	 * @return
+	 * Get the BufferedImage component of the DrawingBoard.
+	 * @return the image
 	 */
 	public BufferedImage getImage(){
 		return img;
 	}
+	
+	
+	/**
+	 * Image setter method.
+	 * <p>
+	 * Sets the DrawingBoard's image to display.
+	 * @param i the BufferedImage we want to set
+	 */
 	public void setImage(BufferedImage i){
 		img = i;
 		repaint();
@@ -115,7 +115,9 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// PAINT COMPONENT
+	/**
+	 * Override of the JPanel's paintComponent() method, draws the BufferedImage onto the JPanel.
+	 */
 	@Override
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
@@ -123,14 +125,25 @@ public class DrawingBoard extends JPanel {
 	}
 	
 	
-// PREFFERRED SIZE OVERRIDE FOR SCROLLPANE
+	/**
+	 * Override of the JPanel's getPreferredSize() method.
+	 * <p>
+	 * With this override, the JScrollPane will get the size of the BufferedImage and apply the scrollbars
+	 * accordingly.
+	 */
 	@Override
 	public Dimension getPreferredSize(){
 		return new Dimension(img.getWidth(), img.getHeight());
 	}
 	
 	
-// MOUSE MOTION
+	/**
+	 * Mouse motion listener class.
+	 * <p>
+	 * Passes the mouse event to the currently selected tool's performAction() method.
+	 * @author Dániel Gál
+	 *
+	 */
 	class motionListener implements MouseMotionListener {
 
 		public void mouseDragged(MouseEvent drag) {
@@ -142,7 +155,13 @@ public class DrawingBoard extends JPanel {
 	}
 	
 
-// MOUSE CLICK
+	/**
+	 * Mouse click listener class.
+	 * <p>
+	 * Passes the mouse event to the currently selected tool's performAction() method.
+	 * @author Dániel Gál
+	 *
+	 */
 	class clickListener implements MouseListener {
 
 		public void mouseClicked(MouseEvent click) {
