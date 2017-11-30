@@ -312,10 +312,7 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 			if(size>SLIDER_MAX) size=SLIDER_MAX;
 			board.getSelectedTool().setSize(size);
 			sizeSlider.setValue(size);
-		} catch(NumberFormatException e){
-			board.getSelectedTool().setSize(DEFAULT_BRUSH_SIZE);
-			sizeSlider.setValue(DEFAULT_BRUSH_SIZE);
-		}
+		} catch(NumberFormatException e){}
 	}
 	
 	
