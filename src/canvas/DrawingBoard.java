@@ -55,9 +55,19 @@ public class DrawingBoard extends JPanel {
 	 * <p>
 	 * Add tools to the drawing board in this function.
 	 */
-	public void initTools(){
+	private void initTools(){
 		tools.put("Brush", new Brush(img.getGraphics()));
 		tools.put("Pencil", new Pencil(img.getGraphics()));
+	}
+
+
+    /**
+     * Loops through the tools and sets the tools' Graphics to that of the image's.
+     */
+	private void setToolGraphics(){
+		for(DrawTool t : tools.values()){
+		    t.setGraphics(img.getGraphics());
+        }
 	}
 	
 	
@@ -104,8 +114,7 @@ public class DrawingBoard extends JPanel {
 	public void setImage(BufferedImage i){
 		img = i;
 		repaint();
-		initTools();
-		selectTool("Brush");
+		setToolGraphics();
 	}
 	
 	

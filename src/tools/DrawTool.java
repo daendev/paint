@@ -21,7 +21,11 @@ public abstract class DrawTool {
 	public DrawTool(Graphics g){
 		this.g = g;
 	}
-	
+
+
+	public void setGraphics(Graphics g){
+		this.g = g;
+	}
 	
 	/**
 	 * Tool-specific action to be performed on the Graphics. Subclasses have to overwrite this.

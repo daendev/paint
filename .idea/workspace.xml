@@ -1,17 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8797a356-572f-4f31-92d8-5b72b8c24286" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/class-uml1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/canvas/DrawingBoard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/canvas/class-use/DrawingBoard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/canvas/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/canvas/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/canvas/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/canvas/package-use.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/constant-values.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/deprecated-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/gui/Window.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/gui/class-use/Window.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/gui/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/gui/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/gui/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/gui/package-use.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/help-doc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-12.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-files/index-9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/overview-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/overview-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/package-list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/stylesheet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/Brush.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/DrawTool.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/PaintingDrawTool.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/Pencil.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/class-use/Brush.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/class-use/DrawTool.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/class-use/PaintingDrawTool.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/class-use/Pencil.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/tools/package-use.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/trees.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/canvas/DrawingBoard$clickListener.class" afterPath="$PROJECT_DIR$/bin/canvas/DrawingBoard$clickListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/canvas/DrawingBoard$motionListener.class" afterPath="$PROJECT_DIR$/bin/canvas/DrawingBoard$motionListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/canvas/DrawingBoard.class" afterPath="$PROJECT_DIR$/bin/canvas/DrawingBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/Window$1.class" afterPath="$PROJECT_DIR$/bin/gui/Window$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/Window.class" afterPath="$PROJECT_DIR$/bin/gui/Window.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/tools/Brush.class" afterPath="$PROJECT_DIR$/bin/tools/Brush.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/tools/DrawTool.class" afterPath="$PROJECT_DIR$/bin/tools/DrawTool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/tools/PaintingDrawTool.class" afterPath="$PROJECT_DIR$/bin/tools/PaintingDrawTool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/tools/Pencil.class" afterPath="$PROJECT_DIR$/bin/tools/Pencil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trees.png" afterPath="$PROJECT_DIR$/trees.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/canvas/DrawingBoard.java" afterPath="$PROJECT_DIR$/src/canvas/DrawingBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/DrawTool.java" afterPath="$PROJECT_DIR$/src/tools/DrawTool.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,131 +74,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DrawingBoard.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DrawingBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/canvas/DrawingBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/Window.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JAVA/" pinned="false" current-in-tab="true">
-        <entry file="uml://JAVA/">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="563.0" y="348.5">tools.Brush</node>
-                <node x="223.70299145299143" y="0.0">tools.DrawTool</node>
-                <node x="290.0" y="348.5">tools.Pencil</node>
-                <node x="547.0534188034188" y="147.0">tools.PaintingDrawTool</node>
-                <node x="0.0" y="349.0">canvas.DrawingBoard.motionListener</node>
-                <node x="837.0" y="316.0">canvas.DrawingBoard.clickListener</node>
-                <node x="262.5" y="915.0">gui.Window</node>
-                <node x="293.0" y="525.0">canvas.DrawingBoard</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="canvas.DrawingBoard.motionListener" target="canvas.DrawingBoard">
-                  <point x="64.5" y="36.5" />
-                  <point x="193.5" y="495.0" />
-                  <point x="334.16666666666663" y="495.0" />
-                  <point x="-82.33333333333337" y="-170.0" />
-                </edge>
-                <edge source="canvas.DrawingBoard" target="tools.Brush">
-                  <point x="27.444444444444457" y="-170.0" />
-                  <point x="443.94444444444446" y="475.0" />
-                  <point x="689.5" y="475.0" />
-                  <point x="0.0" y="37.0" />
-                </edge>
-                <edge source="tools.Brush" target="tools.PaintingDrawTool">
-                  <point x="0.0" y="-37.0" />
-                  <point x="689.5" y="291.0" />
-                  <point x="673.5534188034188" y="291.0" />
-                  <point x="0.0" y="59.5" />
-                </edge>
-                <edge source="canvas.DrawingBoard" target="canvas.DrawingBoard.clickListener">
-                  <point x="82.33333333333337" y="-170.0" />
-                  <point x="498.83333333333337" y="495.0" />
-                  <point x="902.5" y="495.0" />
-                  <point x="-65.5" y="69.5" />
-                </edge>
-                <edge source="canvas.DrawingBoard.clickListener" target="canvas.DrawingBoard">
-                  <point x="65.5" y="69.5" />
-                  <point x="1033.5" y="505.0" />
-                  <point x="526.2777777777778" y="505.0" />
-                  <point x="109.77777777777783" y="-170.0" />
-                </edge>
-                <edge source="canvas.DrawingBoard" target="tools.PaintingDrawTool">
-                  <point x="54.888888888888914" y="-170.0" />
-                  <point x="471.3888888888889" y="485.0" />
-                  <point x="826.5" y="485.0" />
-                  <point x="826.5" y="291.0" />
-                  <point x="757.8867521367521" y="291.0" />
-                  <point x="84.33333333333326" y="59.5" />
-                </edge>
-                <edge source="canvas.DrawingBoard" target="canvas.DrawingBoard.motionListener">
-                  <point x="-109.77777777777783" y="-170.0" />
-                  <point x="306.7222222222222" y="505.0" />
-                  <point x="64.5" y="505.0" />
-                  <point x="-64.5" y="36.5" />
-                </edge>
-                <edge source="tools.Pencil" target="tools.PaintingDrawTool">
-                  <point x="0.0" y="-37.0" />
-                  <point x="416.5" y="291.0" />
-                  <point x="589.2200854700856" y="291.0" />
-                  <point x="-84.33333333333326" y="59.5" />
-                </edge>
-                <edge source="canvas.DrawingBoard" target="tools.Pencil">
-                  <point x="0.0" y="-170.0" />
-                  <point x="0.0" y="37.0" />
-                </edge>
-                <edge source="gui.Window" target="canvas.DrawingBoard">
-                  <point x="77.0" y="-466.5" />
-                  <point x="493.5" y="890.0" />
-                  <point x="478.25" y="890.0" />
-                  <point x="61.75" y="170.0" />
-                </edge>
-                <edge source="tools.PaintingDrawTool" target="tools.DrawTool">
-                  <point x="0.0" y="-59.5" />
-                  <point x="673.5534188034188" y="122.0" />
-                  <point x="434.5363247863247" y="122.0" />
-                  <point x="84.33333333333326" y="48.5" />
-                </edge>
-                <edge source="canvas.DrawingBoard" target="tools.DrawTool">
-                  <point x="-27.444444444444457" y="-170.0" />
-                  <point x="389.05555555555554" y="475.0" />
-                  <point x="279.5" y="475.0" />
-                  <point x="279.5" y="122.0" />
-                  <point x="350.20299145299145" y="122.0" />
-                  <point x="0.0" y="48.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.8" x="465.625" y="615.625" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Inner Classes</Category>
-                <Category>Properties</Category>
-                <Category>Methods</Category>
-                <Category>Constructors</Category>
-                <Category>Fields</Category>
-              </Categories>
-              <SCOPE>Project Files</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
+            <state relative-caret-position="993">
+              <caret line="151" column="29" lean-forward="false" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+              <folding>
+                <element signature="e#695#713#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,6 +95,14 @@
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/tools/DrawTool.java" />
+        <option value="$PROJECT_DIR$/src/canvas/DrawingBoard.java" />
+      </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -187,10 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,16 +155,27 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="paent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="paent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -345,43 +296,45 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511991293441</updated>
-      <workItem from="1511991307126" duration="2490000" />
+      <workItem from="1511991307126" duration="2856000" />
+      <workItem from="1511997271712" duration="1784000" />
+      <workItem from="1511999401801" duration="176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2490000" />
+    <option name="totallyTimeSpent" value="4816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1370" height="751" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776934" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5477997" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="680" y="-7" width="681" height="731" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -398,16 +351,60 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/canvas/DrawingBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#695#713#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvas/DrawingBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#695#713#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="574">
           <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-paent">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-paent</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-paent</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="57.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tools/DrawTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2100">
+          <caret line="74" column="26" lean-forward="true" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -418,103 +415,38 @@
           <ID>JAVA</ID>
           <OriginalElement />
           <nodes>
-            <node x="563.0" y="348.5">tools.Brush</node>
-            <node x="223.70299145299143" y="0.0">tools.DrawTool</node>
-            <node x="290.0" y="348.5">tools.Pencil</node>
-            <node x="547.0534188034188" y="147.0">tools.PaintingDrawTool</node>
-            <node x="0.0" y="349.0">canvas.DrawingBoard.motionListener</node>
-            <node x="837.0" y="316.0">canvas.DrawingBoard.clickListener</node>
-            <node x="262.5" y="915.0">gui.Window</node>
-            <node x="293.0" y="525.0">canvas.DrawingBoard</node>
+            <node x="" y="">tools.Brush</node>
+            <node x="" y="">tools.DrawTool</node>
+            <node x="" y="">canvas.DrawingBoard.motionListener</node>
+            <node x="" y="">canvas.DrawingBoard.clickListener</node>
+            <node x="" y="">tools.Pencil</node>
+            <node x="" y="">tools.PaintingDrawTool</node>
+            <node x="" y="">gui.Window</node>
+            <node x="" y="">canvas.DrawingBoard</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="canvas.DrawingBoard.motionListener" target="canvas.DrawingBoard">
-              <point x="64.5" y="36.5" />
-              <point x="193.5" y="495.0" />
-              <point x="334.16666666666663" y="495.0" />
-              <point x="-82.33333333333337" y="-170.0" />
-            </edge>
-            <edge source="canvas.DrawingBoard" target="tools.Brush">
-              <point x="27.444444444444457" y="-170.0" />
-              <point x="443.94444444444446" y="475.0" />
-              <point x="689.5" y="475.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="tools.Brush" target="tools.PaintingDrawTool">
-              <point x="0.0" y="-37.0" />
-              <point x="689.5" y="291.0" />
-              <point x="673.5534188034188" y="291.0" />
-              <point x="0.0" y="59.5" />
-            </edge>
-            <edge source="canvas.DrawingBoard" target="canvas.DrawingBoard.clickListener">
-              <point x="82.33333333333337" y="-170.0" />
-              <point x="498.83333333333337" y="495.0" />
-              <point x="902.5" y="495.0" />
-              <point x="-65.5" y="69.5" />
-            </edge>
-            <edge source="canvas.DrawingBoard.clickListener" target="canvas.DrawingBoard">
-              <point x="65.5" y="69.5" />
-              <point x="1033.5" y="505.0" />
-              <point x="526.2777777777778" y="505.0" />
-              <point x="109.77777777777783" y="-170.0" />
-            </edge>
-            <edge source="canvas.DrawingBoard" target="tools.PaintingDrawTool">
-              <point x="54.888888888888914" y="-170.0" />
-              <point x="471.3888888888889" y="485.0" />
-              <point x="826.5" y="485.0" />
-              <point x="826.5" y="291.0" />
-              <point x="757.8867521367521" y="291.0" />
-              <point x="84.33333333333326" y="59.5" />
-            </edge>
-            <edge source="canvas.DrawingBoard" target="canvas.DrawingBoard.motionListener">
-              <point x="-109.77777777777783" y="-170.0" />
-              <point x="306.7222222222222" y="505.0" />
-              <point x="64.5" y="505.0" />
-              <point x="-64.5" y="36.5" />
-            </edge>
-            <edge source="tools.Pencil" target="tools.PaintingDrawTool">
-              <point x="0.0" y="-37.0" />
-              <point x="416.5" y="291.0" />
-              <point x="589.2200854700856" y="291.0" />
-              <point x="-84.33333333333326" y="59.5" />
-            </edge>
-            <edge source="canvas.DrawingBoard" target="tools.Pencil">
-              <point x="0.0" y="-170.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="gui.Window" target="canvas.DrawingBoard">
-              <point x="77.0" y="-466.5" />
-              <point x="493.5" y="890.0" />
-              <point x="478.25" y="890.0" />
-              <point x="61.75" y="170.0" />
-            </edge>
-            <edge source="tools.PaintingDrawTool" target="tools.DrawTool">
-              <point x="0.0" y="-59.5" />
-              <point x="673.5534188034188" y="122.0" />
-              <point x="434.5363247863247" y="122.0" />
-              <point x="84.33333333333326" y="48.5" />
-            </edge>
-            <edge source="canvas.DrawingBoard" target="tools.DrawTool">
-              <point x="-27.444444444444457" y="-170.0" />
-              <point x="389.05555555555554" y="475.0" />
-              <point x="279.5" y="475.0" />
-              <point x="279.5" y="122.0" />
-              <point x="350.20299145299145" y="122.0" />
-              <point x="0.0" y="48.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.8" x="465.625" y="615.625" />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.32222222222222224" x="570.0" y="955.0" />
           <SelectedNodes />
           <Categories>
+            <Category>Fields</Category>
             <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
             <Category>Properties</Category>
             <Category>Methods</Category>
-            <Category>Constructors</Category>
-            <Category>Fields</Category>
           </Categories>
           <SCOPE>Project Files</SCOPE>
           <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/canvas/DrawingBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="993">
+          <caret line="151" column="29" lean-forward="false" selection-start-line="151" selection-start-column="29" selection-end-line="151" selection-end-column="29" />
+          <folding>
+            <element signature="e#695#713#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
