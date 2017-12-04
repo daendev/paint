@@ -29,9 +29,17 @@ public class Pencil extends PaintingDrawTool {
 	 * When the mouse is clicked or dragged, squares get painted on the canvas.
 	 */
 	@Override
-	public void performAction(MouseEvent e) {
+	public void performClickAction(MouseEvent e) {
 		g.setColor(color);
 		g.fillRect(e.getX()-size/2, e.getY()-size/2, size, size);
 	}
+
+
+	@Override
+	public void performPressAction(MouseEvent e) {}
+
+
+	@Override
+	public void performReleaseAction(MouseEvent e) {}
 
 }

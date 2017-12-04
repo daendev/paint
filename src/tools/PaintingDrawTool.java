@@ -59,6 +59,6 @@ public abstract class PaintingDrawTool extends DrawTool {
 	 * @param e the details of the event that triggered the function
 	 */
 	@Override
-	public abstract void performAction(MouseEvent e);
+	public abstract void performClickAction(MouseEvent e);
 
 }

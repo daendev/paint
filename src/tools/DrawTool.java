@@ -31,6 +31,12 @@ public abstract class DrawTool {
 	 * Tool-specific action to be performed on the Graphics. Subclasses have to overwrite this.
 	 * @param e the details of the event that triggered the function
 	 */
-	public abstract void performAction(MouseEvent e);
+	public abstract void performClickAction(MouseEvent e);
+	
+	
+	public abstract void performPressAction(MouseEvent e);
+	
+	
+	public abstract void performReleaseAction(MouseEvent e);
 	
 }

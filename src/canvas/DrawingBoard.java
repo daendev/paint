@@ -58,6 +58,7 @@ public class DrawingBoard extends JPanel {
 	private void initTools(){
 		tools.put("Brush", new Brush(img.getGraphics()));
 		tools.put("Pencil", new Pencil(img.getGraphics()));
+		tools.put("Oval", new Oval(img.getGraphics()));
 	}
 
 
@@ -150,7 +151,7 @@ public class DrawingBoard extends JPanel {
 	class motionListener implements MouseMotionListener {
 
 		public void mouseDragged(MouseEvent drag) {
-			selectedTool.performAction(drag);
+			selectedTool.performClickAction(drag);
 			repaint();
 		}
 
@@ -168,14 +169,26 @@ public class DrawingBoard extends JPanel {
 	class clickListener implements MouseListener {
 
 		public void mouseClicked(MouseEvent click) {
-			selectedTool.performAction(click);
+			selectedTool.performClickAction(click);
 			repaint();
 		}
-
+		
+		
+		public void mousePressed(MouseEvent press) {
+			selectedTool.performPressAction(press);
+			repaint();
+		}
+		
+		
+		public void mouseReleased(MouseEvent release) {
+			selectedTool.performReleaseAction(release);
+			repaint();
+		}	
+		
+		
 		public void mouseEntered(MouseEvent arg0) {}
-		public void mouseExited(MouseEvent arg0) {}
-		public void mousePressed(MouseEvent arg0) {}
-		public void mouseReleased(MouseEvent arg0) {}
+		public void mouseExited(MouseEvent arg0) {}			
+		
 	}
 
 }
