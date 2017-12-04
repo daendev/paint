@@ -39,4 +39,7 @@ public abstract class DrawTool {
 	
 	public abstract void performReleaseAction(MouseEvent e);
 	
+	
+	public abstract void performDragAction(MouseEvent e);
+	
 }

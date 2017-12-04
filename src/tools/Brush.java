@@ -29,9 +29,7 @@ public class Brush extends PaintingDrawTool {
 	 */
 	@Override
 	public void performClickAction(MouseEvent e) {
-		g.setColor(color);
-		if(size==1) g.fillOval(e.getX(), e.getY(), 1, 2);
-		else g.fillOval(e.getX()-size/2, e.getY()-size/2, size, size);
+		draw(e);
 	}
 
 	@Override
@@ -39,5 +37,16 @@ public class Brush extends PaintingDrawTool {
 
 	@Override
 	public void performReleaseAction(MouseEvent e) {}
+
+	@Override
+	public void performDragAction(MouseEvent e) {
+		draw(e);
+	}
+	
+	private void draw(MouseEvent e){
+		g.setColor(color);
+		if(size==1) g.fillOval(e.getX(), e.getY(), 1, 2);
+		else g.fillOval(e.getX()-size/2, e.getY()-size/2, size, size);
+	}
 	
 }

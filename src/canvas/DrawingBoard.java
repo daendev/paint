@@ -151,7 +151,7 @@ public class DrawingBoard extends JPanel {
 	class motionListener implements MouseMotionListener {
 
 		public void mouseDragged(MouseEvent drag) {
-			selectedTool.performClickAction(drag);
+			selectedTool.performDragAction(drag);
 			repaint();
 		}
 
