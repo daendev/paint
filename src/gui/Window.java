@@ -32,6 +32,8 @@ import javax.swing.JToggleButton;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import tools.PaintingDrawTool;
+
 import canvas.DrawingBoard;
 
 /**
@@ -296,7 +298,7 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	private void sizeSliderChanged(){
 		int size = sizeSlider.getValue();
 		sizeTextField.setText(Integer.toString(size));
-		board.getSelectedTool().setSize(size);
+		((PaintingDrawTool) board.getSelectedTool()).setSize(size);
 	}
 	
 	
@@ -310,7 +312,7 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 			int size = Integer.parseInt(sizeTextField.getText());
 			if(size<SLIDER_MIN) size=SLIDER_MIN;
 			if(size>SLIDER_MAX) size=SLIDER_MAX;
-			board.getSelectedTool().setSize(size);
+			((PaintingDrawTool) board.getSelectedTool()).setSize(size);
 			sizeSlider.setValue(size);
 		} catch(NumberFormatException e){}
 	}
@@ -327,7 +329,7 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 		String selectedTool = (String) toolList.getSelectedItem();
 		board.selectTool(selectedTool);
 		colorSelection();
-		board.getSelectedTool().setSize(sizeSlider.getValue());
+		((PaintingDrawTool) board.getSelectedTool()).setSize(sizeSlider.getValue());
 	}
 	
 	
@@ -398,7 +400,7 @@ public class Window extends JFrame implements ActionListener, ChangeListener, Ke
 	public void colorSelection(){
 		for(JToggleButton b : colorMap.keySet()){
 			if(b.isSelected()){
-				board.getSelectedTool().setColor(colorMap.get(b));
+				((PaintingDrawTool) board.getSelectedTool()).setColor(colorMap.get(b));
 				break;
 			}
 		}

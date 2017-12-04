@@ -94,8 +94,8 @@ public class DrawingBoard extends JPanel {
 	 * Get the currently selected tool.
 	 * @return the tool that is currently selected
 	 */
-	public PaintingDrawTool getSelectedTool(){
-		return (PaintingDrawTool) selectedTool;
+	public DrawTool getSelectedTool(){
+		return (DrawTool) selectedTool;
 	}
 	
 	
