@@ -1,8 +1,8 @@
 package tools;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 /**
  * Abstract PaintingDrawTool class, superclass of every painting tool 
@@ -21,8 +21,8 @@ public abstract class PaintingDrawTool extends DrawTool {
 	 * Specifies the canvas' Graphics.
 	 * @param g the Graphics object that will be painted on
 	 */
-	public PaintingDrawTool(Graphics g) {
-		super(g);
+	public PaintingDrawTool(BufferedImage i) {
+		super(i);
 	}
 
 	

@@ -10,7 +10,7 @@ public class BrushTest {
 	@Test
 	public void testBrushConstructor(){
 		BufferedImage image = new BufferedImage(50, 50, BufferedImage.TYPE_INT_RGB);
-		Brush brush = new Brush(image.getGraphics());
+		Brush brush = new Brush(image);
 		Assert.assertEquals(20, brush.getSize());
 		Assert.assertEquals(Color.BLACK, brush.getColor());
 	}

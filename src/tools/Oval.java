@@ -2,14 +2,17 @@ package tools;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+
+import canvas.DrawingBoard;
 
 public class Oval extends PaintingDrawTool {
 
 	private int startX = 0, startY = 0;
-	private Graphics temporaryGraphics;
+	private BufferedImage tempImage;
 	
-	public Oval(Graphics g) {
-		super(g);
+	public Oval(BufferedImage i) {
+		super(i);
 	}
 
 	@Override
@@ -19,7 +22,9 @@ public class Oval extends PaintingDrawTool {
 	public void performPressAction(MouseEvent e) {
 		startX = e.getX();
 		startY = e.getY();
-		temporaryGraphics = g;
+		tempImage = new BufferedImage(DrawingBoard.IMAGE_WIDTH,
+									  DrawingBoard.IMAGE_HEIGHT,
+									  BufferedImage.TYPE_INT_RGB);
 	}
 
 	@Override
@@ -28,6 +33,7 @@ public class Oval extends PaintingDrawTool {
 	}
 	
 	private void createOval(MouseEvent e){
+		Graphics g = image.getGraphics();
 		g.setColor(color);
 		int sizeX = Math.abs(e.getX() - startX);
 		int sizeY = Math.abs(e.getY() - startY);

@@ -3,6 +3,7 @@ package tools;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 /**
  * Brush tool for painting circles
@@ -18,8 +19,8 @@ public class Brush extends PaintingDrawTool {
 	 * Sets the default color and size of the circle, also the Graphics of the canvas.
 	 * @param g the Graphics object that will be painted on
 	 */
-	public Brush(Graphics g) {
-		super(g);
+	public Brush(BufferedImage i) {
+		super(i);
 		color = Color.BLACK;
 		size = 20;
 	}
@@ -44,6 +45,7 @@ public class Brush extends PaintingDrawTool {
 	}
 	
 	private void draw(MouseEvent e){
+		Graphics g = image.getGraphics();
 		g.setColor(color);
 		if(size==1) g.fillOval(e.getX(), e.getY(), 1, 2);
 		else g.fillOval(e.getX()-size/2, e.getY()-size/2, size, size);

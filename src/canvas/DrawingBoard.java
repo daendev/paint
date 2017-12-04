@@ -22,8 +22,8 @@ public class DrawingBoard extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	private static final int IMAGE_WIDTH = 700;
-	private static final int IMAGE_HEIGHT = 350;
+	public static final int IMAGE_WIDTH = 700;
+	public static final int IMAGE_HEIGHT = 350;
 	
 	private BufferedImage img;
 	private Map<String, DrawTool> tools = new HashMap<String, DrawTool>();
@@ -56,18 +56,18 @@ public class DrawingBoard extends JPanel {
 	 * Add tools to the drawing board in this function.
 	 */
 	private void initTools(){
-		tools.put("Brush", new Brush(img.getGraphics()));
-		tools.put("Pencil", new Pencil(img.getGraphics()));
-		tools.put("Oval", new Oval(img.getGraphics()));
+		tools.put("Brush", new Brush(img));
+		tools.put("Pencil", new Pencil(img));
+		tools.put("Oval", new Oval(img));
 	}
 
 
     /**
      * Loops through the tools and sets the tools' Graphics to that of the image's.
      */
-	private void setToolGraphics(){
+	private void setToolImage(){
 		for(DrawTool t : tools.values()){
-		    t.setGraphics(img.getGraphics());
+		    t.setImage(img);
         }
 	}
 	
@@ -115,7 +115,7 @@ public class DrawingBoard extends JPanel {
 	public void setImage(BufferedImage i){
 		img = i;
 		repaint();
-		setToolGraphics();
+		setToolImage();
 	}
 	
 	

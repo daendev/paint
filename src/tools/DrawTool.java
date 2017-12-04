@@ -1,7 +1,7 @@
 package tools;
 
-import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 /**
  * Abstract DrawTool class, superclass of all tools.
@@ -12,19 +12,19 @@ import java.awt.event.MouseEvent;
  */
 public abstract class DrawTool {
 
-	Graphics g;
+	BufferedImage image;
 	
 	/**
 	 * Class constructor
 	 * @param g a Graphics object of an image that can be painted on by the DrawTool
 	 */
-	public DrawTool(Graphics g){
-		this.g = g;
+	public DrawTool(BufferedImage i){
+		setImage(i);
 	}
 
 
-	public void setGraphics(Graphics g){
-		this.g = g;
+	public void setImage(BufferedImage i){
+		image = i;
 	}
 	
 	/**

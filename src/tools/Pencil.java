@@ -3,6 +3,7 @@ package tools;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 /**
  * Pencil tool for painting squares
@@ -18,8 +19,8 @@ public class Pencil extends PaintingDrawTool {
 	 * Sets the default color and size of the square, also the Graphics of the canvas.
 	 * @param g the Graphics object that will be painted on
 	 */
-	public Pencil(Graphics g) {
-		super(g);
+	public Pencil(BufferedImage i) {
+		super(i);
 		color = Color.BLACK;
 		size = 20;
 	}
@@ -42,6 +43,7 @@ public class Pencil extends PaintingDrawTool {
 	public void performReleaseAction(MouseEvent e) {}
 	
 	private void draw(MouseEvent e){
+		Graphics g = image.getGraphics();
 		g.setColor(color);
 		g.fillRect(e.getX()-size/2, e.getY()-size/2, size, size);
 	}
