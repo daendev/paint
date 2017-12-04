@@ -1,12 +1,11 @@
 package tools;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
 public class Oval extends PaintingDrawTool {
 
-	private int startX, startY;
+	private int startX = 0, startY = 0;
 	
 	public Oval(Graphics g) {
 		super(g);
@@ -23,12 +22,22 @@ public class Oval extends PaintingDrawTool {
 
 	@Override
 	public void performReleaseAction(MouseEvent e) {
-		g.setColor(Color.BLACK);
+		g.setColor(color);
 		int sizeX = Math.abs(e.getX() - startX);
 		int sizeY = Math.abs(e.getY() - startY);
 		startX = startX < e.getX() ? startX : e.getX();
 		startY = startY < e.getY() ? startY : e.getY();
-		g.drawOval(startX, startY, sizeX, sizeY);
+		if(size<4){
+			for(int i=0;i<size;++i)
+				g.drawOval(startX+i, startY+i, sizeX-2*i, sizeY-2*i);
+			return;
+		}
+		for(int i=0;i<size;++i){
+			g.drawOval(startX+i, startY+i, sizeX-2*i, sizeY-2*i);
+			g.drawOval(startX+i, startY+i-1, sizeX-2*i, sizeY-2*i-1);
+			g.drawOval(startX+i-1, startY+i, sizeX-2*i-1, sizeY-2*i);
+			g.drawOval(startX+i-1, startY+i-1, sizeX-2*i-1, sizeY-2*i-1);
+		}
 	}
 
 }
