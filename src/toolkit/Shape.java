@@ -1,4 +1,4 @@
-package tools;
+package toolkit;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;

@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
+import toolkit.Shape;
+
 public class Oval extends Shape {
 	
 	public Oval(BufferedImage i) {

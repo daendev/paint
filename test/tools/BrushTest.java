@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import org.junit.Assert; 
 import org.junit.Test;
 
+
 public class BrushTest {
 
 	@Test

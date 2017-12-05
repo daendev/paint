@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import org.junit.Assert; 
 import org.junit.Before;
 import org.junit.Test;
+
 import tools.Brush;
 import tools.Pencil;
 

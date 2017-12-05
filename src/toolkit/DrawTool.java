@@ -1,4 +1,4 @@
-package tools;
+package toolkit;
 
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
  */
 public abstract class DrawTool {
 
-	BufferedImage image;
+	protected BufferedImage image;
 	
 	/**
 	 * Class constructor

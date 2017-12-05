@@ -9,7 +9,11 @@ import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
-import tools.*;
+import toolkit.*;
+import tools.Brush;
+import tools.Oval;
+import tools.Pencil;
+import tools.Rectangle;
 
 import javax.swing.JPanel;
 
@@ -59,6 +63,7 @@ public class DrawingBoard extends JPanel {
 		tools.put("Brush", new Brush(img));
 		tools.put("Pencil", new Pencil(img));
 		tools.put("Oval", new Oval(img));
+		tools.put("Rectangle", new Rectangle(img));
 	}
 
 

@@ -32,7 +32,7 @@ import javax.swing.JToggleButton;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import tools.PaintingDrawTool;
+import toolkit.PaintingDrawTool;
 
 import canvas.DrawingBoard;
 
