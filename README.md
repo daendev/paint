@@ -1,5 +1,9 @@
 # Paint
 
+BME-VIK A programozás alapjai 3 nagy házi feladat.
+
+Paint program Java nyelven.
+
 ### Features
 
  * Rajzolás ecsettel
