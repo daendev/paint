@@ -1,9 +1,16 @@
-# Paent - a paint program in java
+# Paint
 
-## Planned features
+### Features
 
- * Drawing on a canvas with a brush
- * Set brush width
- * Change brush color
- * Save and load progress
- * Export to PNG
+ * Rajzolás ecsettel
+ * Ecset szélességének állítása
+ * Ecset színének változtatása
+ * Mentés és betöltés
+ * Exportálás PNG-be
+
+
+### Docs
+
+ * [Specifikáció](https://drive.google.com/file/d/0B-eMY_OPHGPTLXNPTnZIMFZZYlk/view?usp=sharing)
+
+
